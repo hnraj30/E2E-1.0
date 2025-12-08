@@ -51,7 +51,7 @@ public class CreateContactTest extends BaseClass{
 	{
 		System.out.println(" From Demo test script");
 		//Assert.fail();
-		System.out.println("Hi");
+		System.out.println("Hi....");
 	}
 	
 
