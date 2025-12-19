@@ -1,4 +1,4 @@
-package objectrepository;
+ package objectrepository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -78,6 +78,13 @@ public class HomePageN extends WebDriverUtility{//Rule 1
 		organizationsLink.click();
 	}
 	
+	/**
+	 * This method will click on Leads link
+	 */
+	public void clickOnLeadLink()
+	{
+		leadsLink.click();
+	}
 	
 	public void logoutOfApp(WebDriver driver) throws InterruptedException
 	{

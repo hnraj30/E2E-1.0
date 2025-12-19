@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
@@ -29,5 +30,38 @@ public class ExcelFileUtility {
 		String value = wb.getSheet(sheetName).getRow(rowNumber).getCell(cellNumber).getStringCellValue();
 		return value;
 	}
+	
+	//Read multiple data from Excel file
+	/**
+	 * This method reads multiple data from Excel file
+	 * @param sheetName
+	 * @return
+	 * @throws EncryptedDocumentException
+	 * @throws IOException
+	 */
+	public Object[][] readMultipleData(String sheetName) throws EncryptedDocumentException, IOException
+	{
+		FileInputStream fise = new FileInputStream("C:\\Users\\hnraj\\Desktop\\TestData.xlsx");
+		Workbook wb2 = WorkbookFactory.create(fise);
+		Sheet sh = wb2.getSheet(sheetName);
+		
+		int rowNum = sh.getLastRowNum();
+		int cellNum = sh.getRow(0).getLastCellNum();
+		
+		Object data[][] = new Object[rowNum][cellNum];
+		
+		for(int i=0;i<rowNum;i++)
+		{
+			for(int j=0;j<cellNum;j++)
+			{
+				data[i][j]=sh.getRow(i+1).getCell(j).getStringCellValue();
+			}
+		}
+		
+		return data;
+	}
+	
+	
+	
 
 }

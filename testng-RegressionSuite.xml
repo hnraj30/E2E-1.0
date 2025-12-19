@@ -12,10 +12,14 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
+	  <class name="contactTests.CreateContactTest"/>
       <class name="contactTests.CreateContactWithOrganizationTest"/>
-      <class name="organizationTests.CreateOrganizationWithIndustryTest"/>
-      <class name="contactTests.CreateContactTest"/>
+      
       <class name="organizationTests.CreateOrganizationTest"/>
+      <class name="organizationTests.CreateOrganizationWithIndustryTest"/>
+      <class name="organizationTests.CreateMultipleOrgWithIndustryTest"/>
+      
+      <class name="leadTests.CreateLeadsTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

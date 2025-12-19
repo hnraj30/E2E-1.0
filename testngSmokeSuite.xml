@@ -6,10 +6,16 @@
 			<include name="SmokeSuite"></include>
 		</run>
 	</groups>
+	
+	<listeners>
+		<listener class-name="genericUtilities.ListenersImplementationClass"></listener>
+	</listeners>
+	
   <test thread-count="5" name="Test">
     <classes>
       <class name="contactTests.CreateContactTest"/>
       <class name="organizationTests.CreateOrganizationTest"/>
+      <class name="leadTests.CreateLeadsTest"></class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
